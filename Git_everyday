@@ -1,0 +1,183 @@
+
+>git --version 
+
+c bn
+
+***********************new one  *********************************
+1 er  !!! accede le directory(dossier de projet )
+
+Initialized empty Git repository
+> git  init
+
+*****************************************************************
+accede le directory(dossier de projet )
+> git add . 
+
+****************************************
+commit(. pour equipe  )
+
+> git commit . -m 'first' 
+
+*****************************************************
+
+ >git remote add orgin ( url de github)= https://github.com/salah-cpu/My_Test.git  (par exmple)
+
+
+
+**********************************************************
+put at githup by :
+
+>  git push -u origin master
+
+
+sinon faire  : 
+
+>git push origin master --force
+or short of force -f
+
+>git push origin master -f
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////// MORE DETAILLES ////////////////////////////////////////////////////////////////////////////
+By detailes ::::
+
+List of super userful Git Commands to use everyday.
+Config / Setup
+
+
+
+# Setting Global Username/Email
+git config --global user.name "Aayush Tuladhar"'
+git config --global user.email "aayush.tuladhar@gmail.com"'
+
+
+
+
+# Clone a Repo from URL
+git clone <url>
+
+
+
+
+# Creating an empty GIT repository
+git init
+Adding / Deleting Files
+# Adding all files to Git
+git add .
+
+# Adds files to Git
+git add <file1> <file2>
+
+
+
+
+
+
+# Add folder to Git
+git add <foldername>
+
+
+
+
+# Remmove File from the Project
+git rm <file1> <file2>
+Commit
+# Performing Commit with Message
+git commit <file> -m "Message"
+
+# Perform Commit to All Tracked Files
+git commit -a -m "Message"
+
+# Reverts changed you performed in the <filename>
+git checkout -- <filename>
+Commit History
+
+
+
+
+
+
+# All Git Commits (Reverse Chronological Order)
+git log
+
+
+
+
+
+# All Git Commits with Diffs
+git log -p
+
+# Git Log with Graph
+git log --all --decorate --oneline --graph
+
+Changes
+# Show files added to the index, files with changes, and untracked files
+git status
+
+
+
+
+
+# Show unstaged changes made since your last commit
+git diff
+
+
+
+
+
+# Show changes staged for commit (i.e., difference between index and last commit)
+git diff --cached
+
+
+
+
+# Show changes since last commit
+git diff HEAD
+Sharing
+# Fetches from the remote and merge to the current branch
+git pull
+
+# Sync Master from Origin to Local 
+git pull --rebase origin master
+
+# Update the remote repository
+git push <remote-name> <branch-name>
+git push origin master
+Git Branching Explained
+# Creates a new branch from the old branch
+git checkout -b <newbranch> <oldbranch>
+
+
+
+
+# Switch to <dbranch>
+git checkout <branch>
+git checkout -b      # -b Causes new branch to be created
+git checkout -f      # -f Forcing to change branch. This is used to throw local changes
+
+
+
+
+# Merge contents of <newbranch> to <oldbranch>
+# The --no-ff cause merge to always create a new commit object, even if the merge should be performed with a fast-forward.
+
+git merge --no-ff <newbranch>
+git push origin develop
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Creating a release version
+git checkout -b release-1.2 develop
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><Making a commit
+git commit -a -m "Release Version"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<Finishing a release branch
+git checkout master
+git merge --no-ff release-1.2
+git tag -a 1.2
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Merging contents of release1.2 to the develop branch
+git checkout develop
+git merge --no-ff release-1.2
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<Deleting branch
+git branch -d release1.2

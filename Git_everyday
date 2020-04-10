@@ -1,10 +1,12 @@
 
 >git --version 
 
-c bn (( pour verifie git sinon install git dans mac/os/windows  + compte github bien sur ))
+Good  (( verification off  git 
+        else    install git of my  mac/os/windows  + compte github of caulse  ))
+        
 
 ***********************new one  *********************************
-1 er  !!! accede le directory(dossier de projet )
+1 er  !!! accede le directory (dossier de projet )
 
 Initialized empty Git repository
 > git  init
@@ -37,9 +39,16 @@ or short of force -f
 
 >git push origin master -f
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////// MORE DETAILLES ////////////////////////////////////////////////////////////////////////////
-By detailes ::::
+
+
+///////////////////////////////
+//////////////////////////////////////////////////////////////////
+//////////////////// MORE DETAILLES ///////////////////////
+////////////////////////////////////////////////////
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>><By detailes ::::
+
 
 List of super userful Git Commands to use everyday.
 Config / Setup

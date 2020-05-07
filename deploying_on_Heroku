@@ -11,8 +11,7 @@ by commande line :
 
 >"".join([random.choice(string.printable) for _ in range(24)])
 
-////////////////////////////////////////////////////////////////////////
-SECRET_KEY = os.environ.get('SECRET_KEY', '4i&u(!%shd*0-3$ls)fohsjsd48t(gu%1-ch_wyzk7@#n3bd8e')
+>>>>  For exmple : 
 # '-~aO;| F;rE[??/w^zcumh(9'
 
 
@@ -192,7 +191,7 @@ drwk lazme nzide migration w admistration w nhote les model de bdd
 ['nom de projet .herokuapp.com']
 
 
-GOOD luck , By ELGHARBI SALAH EDDINE , 
+******************************************GOOD luck , By ELGHARBI SALAH EDDINE , ******************************************* 
 
 
 

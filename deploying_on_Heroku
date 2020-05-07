@@ -1,0 +1,255 @@
+setup by setup: 
+
+configiration settings :
+
+
+# SECURITY WARNING: keep the secret key used in production secret!
+
+1 /  need new Key secret 
+by commande line : 
+>import random,string
+
+>"".join([random.choice(string.printable) for _ in range(24)])
+
+////////////////////////////////////////////////////////////////////////
+SECRET_KEY = os.environ.get('SECRET_KEY', '4i&u(!%shd*0-3$ls)fohsjsd48t(gu%1-ch_wyzk7@#n3bd8e')
+# '-~aO;| F;rE[??/w^zcumh(9'
+
+
+# SECURITY WARNING: don't run with debug turned on in production!
+if os.environ.get('ENV') == 'PRODUCTION':
+    DEBUG = False
+else:
+    DEBUG = True
+
+#ALLOWED_HOSTS = ['name__projet.herokuapp.com']
+
+
+at SEttings.py :
+
+import dj_database_url
+
+
+if os.environ.get('ENV') == 'PRODUCTION':
+    # Static files settings
+    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+    # Extra places for collectstatic to find static files.
+    STATICFILES_DIRS = (
+        os.path.join(PROJECT_ROOT, 'static'),
+    )
+
+    # Simplified static file serving.      >>>>>>************11
+    # https://warehouse.python.org/project/whitenoise/
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+    db_from_env = dj_database_url.config(conn_max_age=500)
+    DATABASES['default'].update(db_from_env)
+
+
+
+3/
+
+pip install whitenoise
+
+
+ Midellware [
+ 'whitenoise.middleware.WhiteNoiseMiddleware',
+]
+
+ 
+
+ 4/ at your application ( new file of data ) :  mkdir dumps
+ 
+ then :
+by commande line : 
+       python manage.py dumpdata name_off_yourapps > file
+ 
+       for  exmpl :
+
+python manage.py dumpdata store > store/dumps/store.json
+
+
+
+
+ BDD :
+
+1 er install >>>
+pip install dj-database-url
+
+dbb for exmple by 'postgresSQL' or ...
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql', # on utilise l'adaptateur postgresql
+        'NAME': 'db', # le nom de notre base de données créée précédemment
+        'USER': 'postgres', # attention : remplacez par votre nom d'utilisateur !!
+        'PASSWORD': 'Salahsigais1999!',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    
+    }
+}
+
+
+
+////////////////////////////
+
+
+we need 2 files to  heroku :  Procfile.txt and  requirements.txt
+
+
+pip install gunicorn
+
+1// put in youre file Procfile.txt
+:
+ gunicorn nomdeProjec.wsgi
+
+2//
+pip freeze > requirements.txt
+
+
+/////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
+5////////////////////   create your compte heroku !!!!!
+(with keys )
+
+>>>>>>>>>>>>>>>>>><<<<<< Now by   git :
+
+
+git status
+
+add Procfile nomedeproject manage.py requirments.txt  nomdeapplication
+
+
+git commit -m "mise en production "
+
+
+nzide fiche dakhle f project f static nsmihe  :
+
+.gitignore (  dakhle fih dire >>> !.gitignore )
+
+
+
+add  nomedeproject/static/.gitignore
+
+
+
+>git commit -m "track static file "
+
+
+
+w ncrre application m3 hurkoo
+
+
+>heroku create nomdeproject
+
+
+w drwk lazem engstre les env b dak clea sucret t3 string w random:
+
+>heroku config:set SECRET_KEY=" thotecle t3k daakk "
+
+
+
+>heroku config:set ENV="PRODUCTION"
+
+
+
+/////////////////////// 
+
+>heroku config :
+ ENV 
+ SECRET_KEY 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> nice 
+
+
+>git push heroku master  
+
+((((((( remote feww munite )))))))
+//////////////////////////////////////////
+//////////////////////////////////////
+////////////////////////////////
+/////////////////
+drwk lazme nzide migration w admistration w nhote les model de bdd
+
+**************************************>>> Configration by serveur off heroku 
+
+>heroku run python manage.py migrate 
+
+
+>heroku run python manage.py cretatesuperuser
+
+>heroku run python manage.py  loaddata store/dumps/store.json ((par exmlp hada t3 bdd 
+
+
+//////////////
+
+
+['nom de projet .herokuapp.com']
+
+
+GOOD luck , By ELGHARBI SALAH EDDINE , 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
